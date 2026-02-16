@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>智能记忆系统 - Dashboard</title>
+    <link rel="stylesheet" href="/static/style.css">
+</head>
+<body>
+    <div class="container">
+        <header>
+            <h1>🧠 智能记忆系统</h1>
+            <p class="subtitle">Intelligent Memory System Dashboard</p>
+        </header>
+
+        <nav class="tabs">
+            <button class="tab active" data-tab="overview">概览</button>
+            <button class="tab" data-tab="memories">记忆</button>
+            <button class="tab" data-tab="search">搜索</button>
+            <button class="tab" data-tab="configs">配置</button>
+            <button class="tab" data-tab="reports">报告</button>
+            <button class="tab" data-tab="trends">趋势</button>
+        </nav>
+
+        <main>
+            <section id="overview" class="tab-content active">
+                <div class="stats-grid">
+                    <div class="stat-card">
+                        <h3>总记忆数</h3>
+                        <p class="stat-value" id="total-memories">-</p>
+                    </div>
+                    <div class="stat-card">
+                        <h3>配置数</h3>
+                        <p class="stat-value" id="total-configs">-</p>
+                    </div>
+                    <div class="stat-card">
+                        <h3>报告数</h3>
+                        <p class="stat-value" id="total-reports">-</p>
+                    </div>
+                    <div class="stat-card">
+                        <h3>活跃任务</h3>
+                        <p class="stat-value" id="active-tasks">-</p>
+                    </div>
+                </div>
+
+                <div class="section">
+                    <h2>最近记忆</h2>
+                    <div id="recent-memories" class="card-list"></div>
+                </div>
+
+                <div class="section">
+                    <h2>最近报告</h2>
+                    <div id="recent-reports" class="card-list"></div>
+                </div>
+            </section>
+
+            <section id="memories" class="tab-content">
+                <div class="actions">
+                    <button class="btn primary" onclick="showCreateMemoryModal()">新建记忆</button>
+                    <select id="memory-filter" class="select" onchange="filterMemories()">
+                        <option value="">所有类型</option>
+                        <option value="long_term">长期记忆</option>
+                        <option value="short_term">短期记忆</option>
+                        <option value="session">会话上下文</option>
+                    </select>
+                </div>
+                <div id="memories-list" class="card-list"></div>
+            </section>
+
+            <section id="search" class="tab-content">
+                <div class="search-box">
+                    <input type="text" id="search-input" placeholder="搜索记忆..." class="input">
+                    <button class="btn primary" onclick="searchMemories()">搜索</button>
+                    <label>
+                        <input type="checkbox" id="hybrid-search"> 混合搜索
+                    </label>
+                </div>
+                <div id="search-results" class="card-list"></div>
+            </section>
+
+            <section id="configs" class="tab-content">
+                <div class="actions">
+                    <button class="btn primary" onclick="showCreateConfigModal()">新建配置</button>
+                </div>
+                <div id="configs-list" class="card-list"></div>
+            </section>
+
+            <section id="reports" class="tab-content">
+                <div class="actions">
+                    <button class="btn primary" onclick="generateReport('daily')">日报</button>
+                    <button class="btn primary" onclick="generateReport('weekly')">周报</button>
+                    <button class="btn primary" onclick="generateReport('monthly')">月报</button>
+                </div>
+                <div id="reports-list" class="card-list"></div>
+            </section>
+
+            <section id="trends" class="tab-content">
+                <div class="chart-container">
+                    <h2>记忆增长趋势（每日）</h2>
+                    <div id="daily-trend-chart"></div>
+                </div>
+                <div class="chart-container">
+                    <h2>记忆增长趋势（每周）</h2>
+                    <div id="weekly-trend-chart"></div>
+                </div>
+                <div class="chart-container">
+                    <h2>记忆类型分布</h2>
+                    <div id="types-distribution-chart"></div>
+                </div>
+                <div class="chart-container">
+                    <h2>记忆类别分布</h2>
+                    <div id="categories-distribution-chart"></div>
+                </div>
+            </section>
+        </main>
+    </div>
+
+    <div id="modal" class="modal">
+        <div class="modal-content">
+            <span class="close" onclick="closeModal()">&times;</span>
+            <div id="modal-body"></div>
+        </div>
+    </div>
+
+    <script src="/static/app.js"></script>
+</body>
+</html>

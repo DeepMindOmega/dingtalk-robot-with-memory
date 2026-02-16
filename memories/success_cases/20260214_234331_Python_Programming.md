@@ -1,0 +1,10 @@
+# Python Programming
+
+**Type**: success_case
+**Source**: manual
+**Created**: 2026-02-14T23:43:31.680950+00:00
+**ID**: 1
+
+---
+
+Learning Python programming language

@@ -1,0 +1,30 @@
+# Intelligent Memory System - Python Dependencies
+# Python 3.11+ required
+
+# Core dependencies
+APScheduler==3.10.4          # Task scheduling
+fastapi==0.109.0             # Web framework
+uvicorn[standard]==0.27.0    # ASGI server for FastAPI
+pydantic==2.5.3              # Data validation
+
+# Database
+sqlite3                      # Built-in, no install needed
+
+# Testing
+pytest==7.4.4                # Testing framework
+pytest-cov==4.1.0            # Coverage reporting
+pytest-asyncio==0.23.3       # Async testing support
+httpx==0.26.0               # Async HTTP client for testing
+requests==2.31.0             # HTTP client for integration tests
+
+# Utilities
+python-dateutil==2.8.2       # Date parsing for scheduling
+pytz==2024.1                 # Timezone support
+
+# Logging (optional enhancements)
+colorlog==6.8.0              # Colored console logs
+
+# Vector embeddings (Phase 2)
+numpy==1.26.4
+sentence-transformers==2.5.1
+faiss-cpu==1.7.4
