@@ -7,9 +7,6 @@ queue/*.json.backup
 sessions.json
 sessions-backup-*.json
 
-# 记忆文件（包含对话历史）
-memories/
-
 # 数据库
 data/
 *.db
