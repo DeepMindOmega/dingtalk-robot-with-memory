@@ -105,7 +105,7 @@ intelligent-memory-system/
 ## Installation
 
 ```bash
-cd /home/admin/intelligent-memory-system
+cd ~/intelligent-memory-system
 pip3 install -r requirements.txt
 ```
 
@@ -318,7 +318,7 @@ Logs are stored in `logs/` directory with daily rotation:
 
 ```bash
 # Start the FastAPI server
-cd /home/admin/intelligent-memory-system
+cd ~/intelligent-memory-system
 python3 -m uvicorn src.api.main:app --host 0.0.0.0 --port 8000 --reload
 ```
 
